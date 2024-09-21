@@ -13,20 +13,36 @@ class ViewController: UIViewController {
     @IBOutlet weak var diceImageView1: UIImageView!
     
     @IBOutlet weak var diceImageView2: UIImageView!
+    
+    var leftDiceNumber = 1
+    var rightDiceNumber = 5
     override func viewDidLoad() {
         super.viewDidLoad()
         
         diceImageView1.image=UIImage(imageLiteralResourceName:"DiceSix")
-        diceImageView1.alpha=0.5
+//        diceImageView1.alpha=0.5
      //   WHO   WHAT   VALUE
         diceImageView2.image=UIImage(imageLiteralResourceName: "DiceTwo")
     }
     
     
     @IBAction func rollButtomPressed(_ sender: UIButton) {
-        print("Broo!!,Button got Tapped.")
-        diceImageView1.image=UIImage(imageLiteralResourceName: "DiceFour")
-        diceImageView2.image=UIImage(imageLiteralResourceName: "DiceFour")
+        diceImageView1.image = [UIImage(imageLiteralResourceName: "DiceOne"),UIImage(imageLiteralResourceName: "DiceTwo"),
+         UIImage(imageLiteralResourceName: "DiceThree"),
+         UIImage(imageLiteralResourceName: "DiceFour"),
+         UIImage(imageLiteralResourceName: "DiceFive"),
+         UIImage(imageLiteralResourceName: "DiceSix")
+        ][leftDiceNumber]
+        
+        diceImageView2.image = [UIImage(imageLiteralResourceName: "DiceOne"),UIImage(imageLiteralResourceName: "DiceTwo"),
+         UIImage(imageLiteralResourceName: "DiceThree"),
+         UIImage(imageLiteralResourceName: "DiceFour"),
+         UIImage(imageLiteralResourceName: "DiceFive"),
+         UIImage(imageLiteralResourceName: "DiceSix")
+        ][rightDiceNumber]
+        
+        leftDiceNumber+=1
+        rightDiceNumber-=1
     }
     
 
