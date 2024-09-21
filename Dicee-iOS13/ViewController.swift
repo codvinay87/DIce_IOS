@@ -43,6 +43,8 @@ class ViewController: UIViewController {
         
         leftDiceNumber+=1
         rightDiceNumber-=1
+        
+        print(Int.random(in: 1...10))
     }
     
 
